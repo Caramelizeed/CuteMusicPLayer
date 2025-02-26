@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="player-container">
+        <div class="vinyl-container">
+            <div class="vinyl">
+                <img id="vinylImage" class="vinyl-disc" src="Music.mp3.jpg" alt="Vinyl Image">
+                <div class="vinyl-center"></div>
+            </div>
+        </div>
+        <div class="controls-container">
+            <h2 id="songTitle">Music Player</h2>
+            <audio id="audio">
+                Your browser does not support the audio element.
+            </audio>
+            <div class="player-controls">
+                <button onclick="prevSong()">Previous</button>
+                <button id="playPause" onclick="togglePlayPause()">Play</button>
+                <button onclick="nextSong()">Next</button>
+            </div>
+            <div class="progress-container">
+                <input id="progress" type="range" value="0" max="100" onchange="seekAudio(event)" />
+                <span id="current-time">00:00</span>
+            </div>
+            <div class="volume-container">
+                <input id="volume" type="range" value="100" max="100" onchange="setVolume(event)" />
+                <span id="volume-label">100%</span>
+            </div>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
